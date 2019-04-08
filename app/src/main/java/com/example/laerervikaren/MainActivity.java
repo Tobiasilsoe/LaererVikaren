@@ -18,7 +18,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+//TESTING TESTING TESTING TESTING TESTING TESTING
     FragmentManager manager;
     Fragment currentFragment;
 
