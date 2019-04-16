@@ -34,12 +34,12 @@ public class SummaryActivity  extends BaseActivity {
 
         Log.i(Constants.TAG, "SummaryActivity onCreate");
 
-        ((Button) findViewById(R.id.btnBack)).setOnClickListener(new View.OnClickListener() {
+        /*((Button) findViewById(R.id.btnBack)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finishActivity();
             }
-        });
+        });*/
     }
 
     @Override

@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
-        fragmentTransaction.add(R.id.fragment_view_top,new MatematikFragment());
+        //fragmentTransaction.add(R.id.fragment_view_top,new MatematikFragment());
         //FragmentTransaction.commit();
 
 
