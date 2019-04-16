@@ -19,9 +19,9 @@ public class BaseActivity extends AppCompatActivity {
         if(db.userDao().countUsers() == 0){
             currentUser = new User();
             currentUser.uid = 1;
-            currentUser.Description = "";
-            currentUser.Title = "";
-            currentUser.Url = "";
+            currentUser.Description = "beskrivelse af matematikFessor";
+            currentUser.Title = "Matematikfessor";
+            currentUser.Url = "https://www.matematikfessor.dk/";
             db.userDao().insert(currentUser);
         }
         else{

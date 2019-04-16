@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.laerervikaren.database.User;
+
 import java.util.ArrayList;
 
 public class matematik extends AppCompatActivity implements MatAdapter.ItemClickListener {
@@ -33,10 +35,13 @@ public class matematik extends AppCompatActivity implements MatAdapter.ItemClick
         animalNames.add("Sheep");
         animalNames.add("Goat");
 
+        ArrayList<User> users = new ArrayList<>();
+
+
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.rvAnimals);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MatAdapter(this, animalNames);
+        adapter = new MatAdapter(this, users);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
     }
