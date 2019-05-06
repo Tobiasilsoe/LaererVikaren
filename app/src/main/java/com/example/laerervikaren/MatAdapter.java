@@ -23,6 +23,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.laerervikaren.database.User;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.laerervikaren.R.id.tvAnimalName;
@@ -30,14 +33,17 @@ import static com.example.laerervikaren.R.id.tvAnimalName;
 
 public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
 
-    private List<String> mData;
+    private List<User> users;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    MatAdapter(Context context, List<String> data) {
+    MatAdapter(Context context, List<User> data) {
         this.mInflater = LayoutInflater.from(context);
-        this.mData = data;
+        this.users = data;
+    }
+    public MatAdapter(List<User> users){
+        this.users = users;
     }
 
     // inflates the row layout from xml when needed
@@ -52,15 +58,15 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
 
     // binds the data to the TextView in each row
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        String animal = mData.get(position);
-        holder.myTextView.setText(animal);
+    public void onBindViewHolder(MatAdapter.ViewHolder holder, int position) {
+        String title = users.get(position).Title;
+        holder.myTextView.setText(title);
     }
 
     // total number of rows
     @Override
     public int getItemCount() {
-        return mData.size();
+        return users.size();
     }
 
 
@@ -81,8 +87,8 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
     }
 
     // convenience method for getting data at click position
-    String getItem(int id) {
-        return mData.get(id);
+    public int getItem() {
+        return users.size();
     }
 
     // allows clicks events to be caught

@@ -5,20 +5,22 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Dao
 public interface UserDao {
 
-    @Query("SELECT * FROM user where uid = 1")
-    User getUser();
+    @Query("SELECT * FROM user")
+    List<User> getUser();
+
 
     @Update
     int update(User user);
 
 
     @Insert
-    void insert(User user, List<User> currentUser);
+    void insert(User... user);
 
     @Query("SELECT COUNT(*) from user")
     int countUsers();

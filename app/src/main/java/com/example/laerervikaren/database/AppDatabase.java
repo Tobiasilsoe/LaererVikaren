@@ -5,6 +5,8 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
+import com.example.laerervikaren.DatabaseInitializer;
+
 @Database(entities = {User.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -18,7 +20,9 @@ public abstract class AppDatabase extends RoomDatabase {
                     Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "user-database")
                             // allow queries on the main thread.
                             // Don't do this on a real app!
-
+                            //.allowMainThreadQueries()
+//.addMigrations()
+                            .allowMainThreadQueries()
                             .build();
         }
         return INSTANCE;
@@ -26,5 +30,10 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static void destroyInstance() {
         INSTANCE = null;
+    }
+
+    private static User addUser(final AppDatabase db, User user) {
+        db.userDao().insert(user);
+        return user;
     }
 }
