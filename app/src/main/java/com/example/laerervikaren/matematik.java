@@ -47,17 +47,18 @@ public class matematik extends AppCompatActivity implements MatAdapter.ItemClick
         super.onCreate(savedInstanceState);
         db = AppDatabase.getAppDatabase(this);
 
-        if(db.userDao().getUser().size() == 0){
+        if(db.userDao().getUser().size() ==1){
 
-            user = new User();
+            /*user = new User();
             user.setUid(1);
             user.setDescription("beskrivelse af matematikFessor");
             user.setTitle("Matematikfessor");
             user.setUrl("https://www.matematikfessor.dk/");
             db.userDao().insert(user);
-            Log.d("base","iflokke");
+            Log.d("base","iflokke");*/
+            user = new User(2,"beskrivelse af webmatematik","Webmatematik","https://www.webmatematik.dk/");
 
-
+            db.userDao().insert(user);
             users=db.userDao().getUser();
         }
         else{

@@ -18,6 +18,7 @@ package com.example.laerervikaren;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,8 +60,9 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(MatAdapter.ViewHolder holder, int position) {
-        String title = users.get(position).Title;
+        String title = users.get(position).getTitle();
         holder.myTextView.setText(title);
+        //Log.d("MYINT", "value: " + users.size());
     }
 
     // total number of rows

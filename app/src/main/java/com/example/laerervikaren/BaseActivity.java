@@ -24,14 +24,14 @@ public class BaseActivity extends AppCompatActivity {
 
         if(db.userDao().countUsers() == 0){
 
-            user = new User();
+            /*user = new User();
             user.setUid(1);
             user.setDescription("beskrivelse af matematikFessor");
             user.setTitle("Matematikfessor");
             user.setUrl("https://www.matematikfessor.dk/");
             db.userDao().insert(user);
-            Log.d("base","iflokke");
-
+            Log.d("base","iflokke");*/
+            //user = new User(2,"beskrivelse af webmatematik","Webmatematik","https://www.webmatematik.dk/");
 
             List<User> users=db.userDao().getUser();
         }
