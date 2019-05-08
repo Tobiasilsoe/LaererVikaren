@@ -29,8 +29,10 @@ import com.example.laerervikaren.database.User;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.laerervikaren.R.id.tvAnimalName;
-
+import static com.example.laerervikaren.R.id.description_description;
+import static com.example.laerervikaren.R.id.url_url;
+import static com.example.laerervikaren.R.id.title_title;
+//import static com.example.laerervikaren.R.id.tvAnimalName;
 
 public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
 
@@ -61,7 +63,11 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(MatAdapter.ViewHolder holder, int position) {
         String title = users.get(position).getTitle();
-        holder.myTextView.setText(title);
+        holder.myTitle.setText(title);
+        String url = users.get(position).getTitle();
+        holder.myUrl.setText(url);
+        String description = users.get(position).getTitle();
+        holder.myDescription.setText(description);
         //Log.d("MYINT", "value: " + users.size());
     }
 
@@ -74,11 +80,17 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView myTextView;
+        TextView myTitle;
+        TextView myUrl;
+        TextView myDescription;
 
         ViewHolder(View itemView) {
             super(itemView);
-            myTextView = itemView.findViewById(tvAnimalName);
+            myTitle = itemView.findViewById(title_title);
+            itemView.setOnClickListener(this);
+            myUrl = itemView.findViewById(url_url);
+            itemView.setOnClickListener(this);
+            myDescription = itemView.findViewById(description_description);
             itemView.setOnClickListener(this);
         }
 
