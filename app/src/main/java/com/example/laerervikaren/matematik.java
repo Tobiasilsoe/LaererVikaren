@@ -56,9 +56,9 @@ public class matematik extends AppCompatActivity implements MatAdapter.ItemClick
             user.setUrl("https://www.matematikfessor.dk/");
             db.userDao().insert(user);
             Log.d("base","iflokke");*/
-            user = new User(2,"beskrivelse af webmatematik","Webmatematik","https://www.webmatematik.dk/");
+            /*user = new User(2,"beskrivelse af webmatematik","Webmatematik","https://www.webmatematik.dk/");
 
-            db.userDao().insert(user);
+            db.userDao().insert(user); */
             users=db.userDao().getUser();
         }
         else{
