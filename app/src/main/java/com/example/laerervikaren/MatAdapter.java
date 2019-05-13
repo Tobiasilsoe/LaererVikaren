@@ -64,9 +64,9 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
     public void onBindViewHolder(MatAdapter.ViewHolder holder, int position) {
         String title = users.get(position).getTitle();
         holder.myTitle.setText(title);
-        String url = users.get(position).getTitle();
+        String url = users.get(position).getUrl();
         holder.myUrl.setText(url);
-        String description = users.get(position).getTitle();
+        String description = users.get(position).getDescription();
         holder.myDescription.setText(description);
         //Log.d("MYINT", "value: " + users.size());
     }
