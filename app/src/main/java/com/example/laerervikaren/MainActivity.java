@@ -15,12 +15,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 //TESTING TESTING TESTING TESTING TESTING TESTING
     FragmentManager manager;
     Fragment currentFragment;
+    TextView txtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -64,20 +67,22 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        TextView txtView = (TextView)findViewById(R.id.StartText);
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        txtView.setVisibility(View.INVISIBLE);
 
         if (id == R.id.klasse1_3) {
+        //txtView.setVisibility(View.INVISIBLE);
             currentFragment = new Klasse1_3_Fragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_view_top, currentFragment).addToBackStack(null).commit();
         } else if (id == R.id.klasse4_6){
             currentFragment = new klasse4_6();
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_view_top, currentFragment).addToBackStack(null).commit();
-        }//if (top) {
-            //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_view_top, currentFragment).addToBackStack(null).commit();
-            //top = false;
-        //}
-
+        }else if (id == R.id.klasse7_9){
+            currentFragment = new Klasse7_9();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_view_top, currentFragment).addToBackStack(null).commit();
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

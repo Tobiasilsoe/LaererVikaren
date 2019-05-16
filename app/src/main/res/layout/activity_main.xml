@@ -9,6 +9,15 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <TextView
+        android:id="@+id/StartText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Velkommen til lærervikarappen vælg din klasse"
+        android:visibility="visible"
+        android:textAlignment="center"
+        android:paddingTop="100dp"/>
+
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
@@ -22,5 +31,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
+
 
 </android.support.v4.widget.DrawerLayout>
