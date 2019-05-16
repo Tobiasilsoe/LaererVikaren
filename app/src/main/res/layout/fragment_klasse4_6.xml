@@ -12,6 +12,7 @@
     tools:context=".klasse4_6">
 
 
+
     <TextView
         android:id="@+id/klasse1_3textview"
         android:layout_width="match_parent"
@@ -20,6 +21,7 @@
 
         android:layout_marginTop="20dp"
         android:text="Fra 4-6. klasse"
+        android:textColor="#000000"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
