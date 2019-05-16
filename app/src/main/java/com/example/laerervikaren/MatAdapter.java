@@ -32,6 +32,7 @@ import java.util.List;
 import static com.example.laerervikaren.R.id.description_description;
 import static com.example.laerervikaren.R.id.url_url;
 import static com.example.laerervikaren.R.id.title_title;
+import static com.example.laerervikaren.R.id.visible;
 //import static com.example.laerervikaren.R.id.tvAnimalName;
 
 public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
@@ -96,7 +97,12 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
 
         @Override
         public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+
+
+            if (mClickListener != null){ mClickListener.onItemClick(view, getAdapterPosition());
+                itemView.findViewById(description_description).setVisibility(View.VISIBLE);
+
+            }
         }
     }
 
@@ -107,11 +113,14 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
 
     // allows clicks events to be caught
     void setClickListener(ItemClickListener itemClickListener) {
+
         this.mClickListener = itemClickListener;
     }
 
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
+
         void onItemClick(View view, int position);
+
     }
 }
