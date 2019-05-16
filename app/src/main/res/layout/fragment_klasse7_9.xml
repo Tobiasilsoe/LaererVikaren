@@ -12,5 +12,6 @@
         android:layout_height="match_parent"
         android:text="Fra 7-9. klasse"
         android:textAlignment="center"
-        android:paddingTop="100dp"/>
+        android:paddingTop="20dp"
+        android:textSize="30sp"/>
 </android.support.constraint.ConstraintLayout>
