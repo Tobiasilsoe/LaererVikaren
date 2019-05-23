@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.example.laerervikaren.database.User;
@@ -92,6 +93,7 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
             myUrl = itemView.findViewById(url_url);
             itemView.setOnClickListener(this);
             myDescription = itemView.findViewById(description_description);
+
             itemView.setOnClickListener(this);
         }
 
@@ -101,6 +103,7 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
 
             if (mClickListener != null){ mClickListener.onItemClick(view, getAdapterPosition());
                 itemView.findViewById(description_description).setVisibility(View.VISIBLE);
+
 
             }
         }

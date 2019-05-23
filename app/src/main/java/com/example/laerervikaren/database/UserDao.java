@@ -1,6 +1,7 @@
 package com.example.laerervikaren.database;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
@@ -21,6 +22,9 @@ public interface UserDao {
 
     @Insert
     void insert(User... user);
+
+    @Delete
+    void delete(User...users);
 
     @Query("SELECT COUNT(*) from user")
     int countUsers();

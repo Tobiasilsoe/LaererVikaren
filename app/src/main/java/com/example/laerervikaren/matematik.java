@@ -47,7 +47,7 @@ public class matematik extends AppCompatActivity implements MatAdapter.ItemClick
         super.onCreate(savedInstanceState);
         db = AppDatabase.getAppDatabase(this);
 
-        if(db.userDao().getUser().size() ==1){
+        if(db.userDao().getUser().size() ==3){
 
             /*user = new User();
             user.setUid(1);
@@ -57,8 +57,11 @@ public class matematik extends AppCompatActivity implements MatAdapter.ItemClick
             db.userDao().insert(user);
             Log.d("base","iflokke");*/
             //user = new User(2,"beskrivelse af webmatematik","Webmatematik","https://www.webmatematik.dk/");
+            user = new User(3,"beskrivelse af webmatematik","&lt;u>underline&lt;/u>","https://www.webmatematik.dk/");
+            db.userDao().update(user);
+            //db.userDao().update(user);
+            //new User(2,"beskrivelse af web","&lt;u&gt;mjaw&lt;u&gt;","kaka");
 
-            //db.userDao().insert(user);
             users=db.userDao().getUser();
         }
         else{
