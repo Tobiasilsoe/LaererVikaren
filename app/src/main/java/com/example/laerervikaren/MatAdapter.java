@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.example.laerervikaren.R.id.description_description;
+import static com.example.laerervikaren.R.id.klikher_klikher;
 import static com.example.laerervikaren.R.id.url_url;
 import static com.example.laerervikaren.R.id.title_title;
 import static com.example.laerervikaren.R.id.visible;
@@ -68,8 +69,11 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
         holder.myTitle.setText(title);
         String url = users.get(position).getUrl();
         holder.myUrl.setText(url);
+        String klikher = users.get(position).getKlikher();
+        holder.myKlik.setText(klikher);
         String description = users.get(position).getDescription();
         holder.myDescription.setText(description);
+
         //Log.d("MYINT", "value: " + users.size());
     }
 
@@ -85,6 +89,7 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
         TextView myTitle;
         TextView myUrl;
         TextView myDescription;
+        TextView myKlik;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -92,8 +97,9 @@ public class MatAdapter extends RecyclerView.Adapter<MatAdapter.ViewHolder> {
             itemView.setOnClickListener(this);
             myUrl = itemView.findViewById(url_url);
             itemView.setOnClickListener(this);
+            myKlik = itemView.findViewById(klikher_klikher);
+            itemView.setOnClickListener(this);
             myDescription = itemView.findViewById(description_description);
-
             itemView.setOnClickListener(this);
         }
 

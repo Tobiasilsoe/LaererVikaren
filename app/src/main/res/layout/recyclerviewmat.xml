@@ -38,7 +38,22 @@
             app:layout_constraintVertical_bias="0.0"
             android:autoLink="web"
             />
-
+        <TextView
+            android:id="@+id/klikher_klikher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:background="#dadada"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/url_url"
+            app:layout_constraintVertical_bias="0.0"
+            android:textStyle="bold|italic"
+            />
 
         <TextView
             android:id="@+id/description_description"
@@ -52,7 +67,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/url_url"
+            app:layout_constraintTop_toBottomOf="@id/klikher_klikher"
             />
 
 </android.support.constraint.ConstraintLayout>

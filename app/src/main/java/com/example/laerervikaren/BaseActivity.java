@@ -33,6 +33,7 @@ public class BaseActivity extends AppCompatActivity {
             Log.d("base","iflokke");*/
             //user = new User(2,"beskrivelse af webmatematik","Webmatematik","https://www.webmatematik.dk/");
 
+
             List<User> users=db.userDao().getUser();
         }
         else{

@@ -37,11 +37,22 @@ public class User {
         Url = url;
     }
 
-    public User(int uid, String description, String title, String url) {
+
+  public String getKlikher() {
+        return Klikher;
+    }
+
+    public void setKlikher(String klikher) {
+        Klikher = klikher;
+    }
+//skriv klikher
+    public User(int uid, String description, String title, String url, String klikher) {
         this.uid = uid;
         Description = description;
         Title = title;
         Url = url;
+        Klikher = klikher;
+
     }
     public User(){
 
@@ -53,6 +64,7 @@ public class User {
     public String Description;
     public String Title;
     public String Url;
+    public String Klikher;
 
 
 }
